@@ -11,7 +11,7 @@ fn main() {
 
     match y {
         Some(ref p) => println!("Co-ordinates are {},{} ", p.x, p.y),
-        _ => println!("no match"),
+        _ => panic!("no match!"),
     }
 
 // can also be done with 'if let', see below
