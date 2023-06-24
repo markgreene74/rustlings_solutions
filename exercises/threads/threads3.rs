@@ -1,5 +1,7 @@
 // threads3.rs
-// Execute `rustlings hint threads3` or use the `hint` watch subcommand for a hint.
+//
+// Execute `rustlings hint threads3` or use the `hint` watch subcommand for a
+// hint.
 
 // https://doc.rust-lang.org/book/ch16-02-message-passing.html
 

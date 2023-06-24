@@ -1,5 +1,8 @@
 // strings3.rs
-// Execute `rustlings hint strings3` or use the `hint` watch subcommand for a hint.
+//
+// Execute `rustlings hint strings3` or use the `hint` watch subcommand for a
+// hint.
+
 // https://doc.rust-lang.org/std/string/struct.String.html
 
 fn trim_me(input: &str) -> String {
