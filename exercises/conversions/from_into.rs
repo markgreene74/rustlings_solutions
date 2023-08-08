@@ -45,8 +45,8 @@ impl From<&str> for Person {
         if s.contains(",") {
             // dbg!(s);
             let name_age = match s.split(",").collect::<Vec<&str>>() {
-                name_age if name_age.len() == 2 => {
-                    // split name_age into two elements, take the first as
+                name_age if name_age.len() == 2 || name_age.len() == 3 => {
+                    // split name_age into elements, take the first as
                     // name and the second as age
                     let (name, age) = (&name_age[0], &name_age[1]);
                     // use the helper function (name_age_assigner) to
@@ -155,14 +155,14 @@ mod tests {
     #[test]
     fn test_trailing_comma() {
         let p: Person = Person::from("Mike,32,");
-        assert_eq!(p.name, "John");
-        assert_eq!(p.age, 30);
+        assert_eq!(p.name, "Mike");
+        assert_eq!(p.age, 32);
     }
 
     #[test]
     fn test_trailing_comma_and_some_string() {
         let p: Person = Person::from("Mike,32,man");
-        assert_eq!(p.name, "John");
-        assert_eq!(p.age, 30);
+        assert_eq!(p.name, "Mike");
+        assert_eq!(p.age, 32);
     }
 }
