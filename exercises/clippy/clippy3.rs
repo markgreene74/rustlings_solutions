@@ -5,7 +5,7 @@
 
 #[allow(unused_variables, unused_assignments)]
 fn main() {
-    let my_option: Option<()> = None;
+    let my_option: Option<()> = Default::default();
     if let Some(value) = my_option {
         // we could use Some(_) here, as we really don't have any further
         // use for `value`, but that causes another clippy warning ...
