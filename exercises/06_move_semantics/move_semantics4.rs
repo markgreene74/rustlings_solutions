@@ -11,7 +11,7 @@
 fn main() {
     let vec0 = vec![22, 44, 66];
 
-    let mut vec1 = fill_vec();
+    let vec1 = fill_vec();
 
     assert_eq!(vec1, vec![22, 44, 66, 88]);
 }

@@ -12,7 +12,7 @@ fn trim_me(input: &str) -> String {
 }
 
 fn compose_me(input: &str) -> String {
-    // TODO: Add " world!" to the string! There's multiple ways to do this!
+    // TODO: Add " world!" to the string! There are multiple ways to do this!
     // String::from(input.to_owned() + " world!")
     String::from(input) + " world!"
 }
