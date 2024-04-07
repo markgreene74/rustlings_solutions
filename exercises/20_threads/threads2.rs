@@ -20,6 +20,7 @@ struct JobStatus {
 }
 
 fn main() {
+    // TODO: `Arc` isn't enough if you want a **mutable** shared state
     let status = Arc::new(Mutex::new(JobStatus { jobs_completed: 0 }));
     let mut handles = vec![];
     for _ in 0..10 {
@@ -32,11 +33,13 @@ fn main() {
         });
         handles.push(handle);
     }
+
+    // Waiting for all jobs to complete
     for handle in handles {
         handle.join().unwrap();
-        // TODO: Print the value of the JobStatus.jobs_completed. Did you notice
-        // anything interesting in the output? Do you have to 'join' on all the
-        // handles?
-        println!("jobs completed {}", status.lock().unwrap().jobs_completed);
+        // println!("jobs completed {}", status.lock().unwrap().jobs_completed);
     }
+
+    // TODO: Print the value of `JobStatus.jobs_completed`
+    println!("jobs completed {}", status.lock().unwrap().jobs_completed);
 }
